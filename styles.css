@@ -9,7 +9,8 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
+    min-width: 320px;
 }
 
 
@@ -19,20 +20,21 @@ body {
 
 .hero {
     min-height: 100vh;
+    text-align: center;
 
     background-image:
         linear-gradient(
-            rgba(255, 255, 255, 0.15),
-            rgba(255, 255, 255, 0.15)
+            rgba(255, 255, 255, 0.3),
+            rgba(255, 255, 255, 0.3)
         ),
-        url("water-background.jpg");
+        url("img/image.png");
 
     background-size: cover;
     background-position: center;
 
-    padding: 80px 40px;
+    padding: 64px 24px;
 
-    color: white;
+    color: #ffd200;
 }
 
 
@@ -42,12 +44,13 @@ body {
 
 .header {
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 88px;
 }
 
 .subtitle {
     color: #203b78;
     font-size: 24px;
+    font-weight: bold;
     margin-bottom: 5px;
 }
 
@@ -59,22 +62,18 @@ body {
 }
 
 .logo {
-    background-color: #ffd200;
-    color: black;
-
     width: 40px;
     height: 40px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 24px;
+    object-fit: cover;
+    object-position: left center;
+    border-radius: 8px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
 .brand h1 {
     color: #203b78;
-    font-size: 40px;
+    font-size: 38px;
 }
 
 .yellow-line {
@@ -87,12 +86,25 @@ body {
 }
 
 .tagline {
+    max-width: 680px;
+    margin: 0 auto;
     color: #ffd200;
 
-    font-size: 21px;
+    font-size: 26px;
     font-weight: bold;
 
-    line-height: 1;
+    line-height: 1.25;
+    text-shadow: 1px 1px 3px #203b78;
+}
+
+.description {
+    max-width: 620px;
+    margin: 20px auto 0;
+    color: #ffd200;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.25;
+    text-shadow: 1px 1px 3px #203b78;
 }
 
 
@@ -102,19 +114,23 @@ body {
 
 .cards {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch;
 
-    gap: 55px;
+    gap: 44px 32px;
 
-    max-width: 1000px;
+    max-width: 920px;
     margin: 0 auto;
 }
 
 .card-container {
     position: relative;
+    display: flex;
+    flex-direction: column;
 
-    width: 180px;
+    width: 100%;
+    max-width: 260px;
 
     text-align: center;
 }
@@ -128,7 +144,7 @@ body {
     width: 76px;
     height: 90px;
 
-    margin: 0 auto -38px;
+    margin: 0 auto -24px;
 
     background-color: #ffad2f;
 
@@ -136,24 +152,33 @@ body {
     align-items: center;
     justify-content: center;
 
-    color: white;
+    color: #ffd200;
 
     font-size: 25px;
 
     z-index: 2;
+    border-radius: 8px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.icon img {
+    width: 66px;
+    height: 52px;
+    object-fit: contain;
 }
 
 
 /* Blue information card */
 
 .card {
-    min-height: 215px;
+    min-height: 230px;
+    text-align: center;
 
     background-color: #203b78;
 
-    border-radius: 12px;
+    border-radius: 8px;
 
-    padding: 60px 14px 20px;
+    padding: 48px 20px 24px;
 
     display: flex;
     flex-direction: column;
@@ -161,6 +186,9 @@ body {
 
     position: relative;
     z-index: 1;
+    flex: 1;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.28);
 }
 
 .card h2 {
@@ -183,9 +211,11 @@ body {
 .button {
     display: inline-block;
 
-    margin-top: 18px;
+    width: 140px;
+    min-height: 44px;
+    margin: 16px auto 0;
 
-    padding: 10px 22px;
+    padding: 10px 12px;
 
     background-color: #00447c;
 
@@ -193,7 +223,77 @@ body {
 
     font-size: 18px;
 
-    text-decoration: underline;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+    filter: brightness(1.15);
+    transform: translateY(-3px);
+}
+
+
+/* ------------------------------
+   Impact statistics
+------------------------------ */
+
+.impact {
+    max-width: 920px;
+    margin: 96px auto 0;
+    padding-top: 28px;
+    border-top: 2px solid #ffb52e;
+}
+
+.impact h2 {
+    color: #203b78;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.impact-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 24px;
+}
+
+.impact-stat {
+    flex: 1;
+    min-width: 0;
+}
+
+.impact-stat strong {
+    display: block;
+    color: #ffd200;
+    font-size: 32px;
+    line-height: 1.1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.impact-stat span {
+    display: block;
+    margin-top: 8px;
+    color: #203b78;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.25;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+}
+
+.impact-stat--people strong {
+    font-size: 38px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.impact-stat--people span {
+    font-size: 17px;
 }
 
 
@@ -204,21 +304,60 @@ body {
 @media (max-width: 700px) {
 
     .hero {
-        padding: 50px 20px;
+        padding: 42px 16px 56px;
     }
 
     .header {
-        margin-bottom: 60px;
+        margin-bottom: 64px;
+    }
+
+    .subtitle {
+        font-size: 20px;
     }
 
     .brand h1 {
         font-size: 30px;
     }
 
+    .logo {
+        width: 34px;
+        height: 34px;
+        font-size: 20px;
+    }
+
+    .tagline {
+        font-size: 18px;
+    }
+
+    .description {
+        font-size: 18px;
+    }
+
     .cards {
         flex-direction: column;
         align-items: center;
-        gap: 45px;
+        gap: 40px;
+    }
+
+    .card-container {
+        max-width: 320px;
+    }
+
+    .impact {
+        margin-top: 72px;
+    }
+
+    .impact-stats {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .impact-stat strong {
+        font-size: 28px;
+    }
+
+    .impact-stat--people strong {
+        font-size: 32px;
     }
 
 }
